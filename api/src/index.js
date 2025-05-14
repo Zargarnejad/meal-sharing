@@ -47,11 +47,11 @@ apiRouter.get("/first-meal", async (req, res) => {
 
 apiRouter.get("/last-meal", async (req, res) => {
   const LAST_MEAL_QUERY = `
-  select * from meal where id = 90
+  select * from meal 
   order by id desc
   limit 1`;
   const data = await knex.raw(LAST_MEAL_QUERY);
-  checkEmptyResponce(data,res)
+  checkEmptyResponce(data, res);
 });
 
 // This nested router example can also be replaced with your own sub-router
@@ -63,8 +63,7 @@ app.listen(process.env.PORT, () => {
   console.log(`API listening on port ${process.env.PORT}`);
 });
 
-
-function checkEmptyResponce(dbResult, res){
+function checkEmptyResponce(dbResult, res) {
   const potentialMeal = dbResult[0];
   if (potentialMeal.length == 0) {
     res.status(404);
