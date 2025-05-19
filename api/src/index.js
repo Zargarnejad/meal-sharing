@@ -12,11 +12,11 @@ app.use(bodyParser.json());
 const apiRouter = express.Router();
 
 apiRouter.get("/future-meals", async (req, res) => {
-  const FEUTER_MEAL_QUERY = `
+  const FUTURE_MEAL_QUERY = `
   select * from meal 
   where \`when\`> now();
   `;
-  const meals = await knex.raw(FEUTER_MEAL_QUERY);
+  const meals = await knex.raw(FUTURE_MEAL_QUERY);
   res.json({ meals });
 });
 
@@ -40,6 +40,7 @@ apiRouter.get("/all-meals", async (req, res) => {
 apiRouter.get("/first-meal", async (req, res) => {
   const FIRST_MEAL_QUERY = `
   select * from meal
+  order by id asc
   limit 1`;
   const data = await knex.raw(FIRST_MEAL_QUERY);
   checkEmptyResponce(data, res);
