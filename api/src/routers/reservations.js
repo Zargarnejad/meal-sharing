@@ -31,7 +31,7 @@ reservationsRouter.post("/", async (req, res) => {
     res.status(201).json({ message: "A new reservation added!" });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ error: "Failded to add user" });
+    res.status(500).json({ error: "Failed to add a new reservation" });
   }
 });
 
@@ -44,7 +44,7 @@ reservationsRouter.get("/:id", async (req, res) => {
     }
     res.json(selectedReservation);
   } catch (err) {
-    res.status(500).json({ error: " failed to find a meal" });
+    res.status(500).json({ error: " Failed to find a reservation" });
   }
 });
 
@@ -70,7 +70,7 @@ reservationsRouter.put("/:id", async (req, res) => {
     });
     res.json(updatedReservation);
   } catch (err) {
-    res.status(500).json({ error: " failed to update a reservation" });
+    res.status(500).json({ error: " Failed to update a reservation" });
   }
 });
 
@@ -80,7 +80,7 @@ reservationsRouter.delete("/:id", async (req, res) => {
     const deletedReservation = await knex("reservation").where({ id }).del();
     res.json({ message: `Reservation with id ${id} deleted.` });
   } catch (err) {
-    res.status(500).json({ error: " failed to delete a reservation" });
+    res.status(500).json({ error: " Failed to delete a reservation" });
   }
 });
 

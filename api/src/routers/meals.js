@@ -28,7 +28,7 @@ mealsRouter.post("/", async (req, res) => {
         .insert({title,description,location,when,max_reservations, price,created_date });
         res.status(201).json({message:'A new meal added!'});
     }catch(err){
-        res.status(500).json({error: 'Failded to add meal'})
+        res.status(500).json({error: 'Failded to add a meal'})
     }
 });
 
@@ -43,7 +43,7 @@ try{
     res.json(selectedMeal)
 
 }catch(err){
-    res.status(500).json({error:' failed to find a meal'})
+    res.status(500).json({error:' Failed to find a meal'})
 }
 
 });
@@ -76,7 +76,7 @@ mealsRouter.put("/:id", async (req, res) => {
         res.status(200).json({ message: "A meal updated!", updatedMeal });
 
     } catch (err) {
-      res.status(500).json({ error: " failed to update a meal" });
+      res.status(500).json({ error: " Failed to update a meal" });
     }
 
 });
@@ -88,7 +88,7 @@ try {
   const deletedMeal = await knex("meal").where({ id }).del();
   res.json({message:`Meal with id ${id} deleted.`})
 } catch (err) {
-  res.status(500).json({ error: " failed to delet a meal" });
+  res.status(500).json({ error: " Failed to delete a meal" });
 }
 
 
