@@ -12,7 +12,6 @@ mealsRouter.get("/", async (req, res) => {
 
 mealsRouter.post("/", async (req, res) => {
     const {
-        id,
       title,
       description,
       location,
@@ -26,21 +25,19 @@ mealsRouter.post("/", async (req, res) => {
     }
     try{
         await knex("meal")
-        .insert({id,title,description,location,when,max_reservations, price,created_date });
+        .insert({title,description,location,when,max_reservations, price,created_date });
         res.status(201).json({message:'A new meal added!'});
     }catch(err){
-        console.log(err);
-        res.status(500).json({error: 'Failded to add user'})
+        res.status(500).json({error: 'Failded to add meal'})
     }
 });
-
 
 
 mealsRouter.get("/:id",async (req, res) => {
 const {id} = req.params;
 try{ 
    const selectedMeal = await knex('meal').where({id});
-    if(!selectedMeal){
+    if(selectedMeal === 0 ){
         return res.status(404).json({error:"Meal not found"});
     }
     res.json(selectedMeal)
@@ -76,7 +73,7 @@ mealsRouter.put("/:id", async (req, res) => {
           price,
           created_date
         });
-      res.json(updatedMeal);
+        res.status(200).json({ message: "A meal updated!", updatedMeal });
 
     } catch (err) {
       res.status(500).json({ error: " failed to update a meal" });
