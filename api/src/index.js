@@ -3,8 +3,8 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import knex from "./database_client.js";
-import mealsRouter from "./routers/meals.js";
-import reservationsRouter from "./routers/reservations.js";
+import {mealsRouter} from "./routers/meals.js";
+import {reservationsRouter} from "./routers/reservations.js";
 
 const app = express();
 app.use(cors());
