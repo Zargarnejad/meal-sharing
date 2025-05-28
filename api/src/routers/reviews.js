@@ -4,24 +4,35 @@ import { validateId } from "./middlewares.js";
 
 export const reviewsRouter = express.Router();
 
-
 reviewsRouter.get("/", async (req, res) => {
   const allReviews = await knex("review");
   res.json({ allReviews });
 });
 
 reviewsRouter.post("/", async (req, res) => {
-  const { title, description, meal_id, stars } =
-    req.body;
-  if (!title || typeof title !== "string") {
+  const { title, description, meal_id, stars } = req.body;
+  if (!title || typeof title !== "string" || title.length === 0) {
     return res
       .status(400)
       .json({ error: "Title is required and must be a string." });
   }
-
+  if (!meal_id || typeof meal_id !== "number" || meal_id < 0) {
+    return res
+      .status(400)
+      .json({ error: "meal_id is required and must be a positive number." });
+  }
+  if (!stars || typeof stars !== "number" || stars < 0 || stars > 5) {
+    return res
+      .status(400)
+      .json({ error: "meal_id is required and must be a number." });
+  }
   try {
     await knex("review").insert({
-        title, description, meal_id,stars, created_date: new Date(),
+      title,
+      description,
+      meal_id,
+      stars,
+      created_date: new Date(),
     });
     res.status(201).json({ message: "A new review added!" });
   } catch (err) {
@@ -47,28 +58,39 @@ reviewsRouter.put("/:id", validateId, async (req, res) => {
   const { id } = req.params;
   const { title, description, meal_id, stars } = req.body;
 
-  if (!title || typeof title !== "string") {
+  if (!title || typeof title !== "string" || title.length === 0) {
     return res
       .status(400)
       .json({ error: "Title is required and must be a string." });
   }
-  
+  if (!meal_id || typeof meal_id !== "number" || meal_id < 0) {
+    return res
+      .status(400)
+      .json({ error: "meal_id is required and must be a positive number." });
+  }
+  if (!stars || typeof stars !== "number" || stars < 0 || stars > 5) {
+    return res
+      .status(400)
+      .json({ error: "meal_id is required and must be a number." });
+  }
   try {
-    const updatedMeal = await knex("review").where({ id }).update({
+    const updatedReviw = await knex("review").where({ id }).update({
       title,
       description,
       meal_id,
-      stars
+      stars,
     });
-    res.status(200).json({ message: "A meal updated!", updatedMeal });
+    res.status(200).json({ message: "A meal updated!", updatedReviw });
   } catch (err) {
-    res.status(500).json({ error: " Failed to update a meal" });
+    res.status(500).json({ error: " Failed to update a review" });
   }
 });
 
 reviewsRouter.delete("/:id", validateId, async (req, res) => {
   try {
-    const deletedReview = await knex("review").where({ id: req.params.id }).del();
+    const deletedReview = await knex("review")
+      .where({ id: req.params.id })
+      .del();
     res.json({ message: `Review with id ${req.params.id} deleted.` });
   } catch (err) {
     res.status(500).json({ error: " Failed to delete a review" });
