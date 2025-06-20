@@ -1,3 +1,20 @@
+body {
+  background-color: darksalmon;
+  color:whitesmoke;
+  
+}
+
+.navBar{
+  margin-top: 0;
+  padding: 0;
+  background-color: #e92d28;
+  color:whitesmoke;
+}
+.navBar ul {
+  text-align: center;
+  color:whitesmoke;
+  list-style: none;
+}
 .link {
   display: flex;
   margin: 5vh 0;
@@ -6,4 +23,32 @@
 .logo,
 .message {
   margin: auto;
+}
+
+.mealsListContainer {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mealsList {
+  color:white;
+  text-align: left;
+  /* border: solid 1px lightgray; */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.mealsListItem {
+  list-style: none;
+  border-bottom: solid 0.2rem #e92d28;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+.mealsItemTitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
