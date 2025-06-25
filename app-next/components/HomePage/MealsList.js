@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import "./HomePage.css";
+import Meal from "./Meal";
 
 function MealsList() {
   const [meals, setMeals] = useState([]);
@@ -23,15 +24,7 @@ function MealsList() {
       <h1>Meals List:</h1>
       <ul className="mealsList">
         {meals.map((meal, index) => {
-          return (
-            <li key={index} className="mealsListItem">
-              <h3 className="mealsItemTitle">
-                <div>{meal.title}</div>
-                <div>{meal.price}</div>
-              </h3>
-              <p>{meal.description}</p>
-            </li>
-          );
+          return <Meal key={index} meal={meal} />
         })}
       </ul>
     </div>
