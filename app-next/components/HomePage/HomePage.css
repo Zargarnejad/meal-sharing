@@ -8,6 +8,27 @@ body {
 .welcomeSection {
   width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: darksalmon;
+  color: whitesmoke;
+}
+.errorMessage {
+  color: red;
+  font-weight: bold;
+  font-size: large;
+}
+
+.navBar {
+  margin-top: 0;
+  padding: 0;
+  background-color: #e92d28;
+  color: whitesmoke;
+}
+.navBar ul {
+  text-align: center;
+  color: whitesmoke;
+  list-style: none;
+}
+.link {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,6 +57,7 @@ body {
 }
 
 .mealsList {
+  color: white;
   text-align: left;
   display: grid;
   justify-content: space-evenly;
