@@ -8,7 +8,8 @@ body {
 .welcomeSection {
   width: 100%;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: darksalmon;
+  background-color: orange;
+  padding: 1rem;
   color: whitesmoke;
 }
 .errorMessage {
@@ -57,7 +58,6 @@ body {
 }
 
 .mealsList {
-  color: white;
   text-align: left;
   display: grid;
   justify-content: space-evenly;
