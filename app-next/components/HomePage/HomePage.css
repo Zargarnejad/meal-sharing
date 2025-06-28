@@ -1,18 +1,22 @@
 body {
   background-color: darksalmon;
-  color:whitesmoke;
-  
+  color: whitesmoke;
+}
+.errorMessage {
+  color: red;
+  font-weight: bold;
+  font-size: large;
 }
 
-.navBar{
+.navBar {
   margin-top: 0;
   padding: 0;
   background-color: #e92d28;
-  color:whitesmoke;
+  color: whitesmoke;
 }
 .navBar ul {
   text-align: center;
-  color:whitesmoke;
+  color: whitesmoke;
   list-style: none;
 }
 .link {
@@ -33,7 +37,7 @@ body {
 }
 
 .mealsList {
-  color:white;
+  color: white;
   text-align: left;
   /* border: solid 1px lightgray; */
   padding-left: 1rem;
