@@ -186,12 +186,25 @@ mealsRouter.post("/", async (req, res) => {
 mealsRouter.get("/:id", validateId, async (req, res) => {
   const { id } = req.params;
   try {
-    const selectedMeal = await knex("meal").where({ id });
+    const selectedMeal = await knex("meal as m")
+      .leftOuterJoin(
+        // Subquery to fetch the sum of all reservations for each meal
+        knex("reservation as r")
+          .select("r.meal_id")
+          .sum("number_of_guests as current_reservation_count")
+          .groupBy("r.meal_id")
+          .as("res"),
+        "m.id",
+        "res.meal_id"
+      )
+      .where({ id })
+      .select("*");
     if (selectedMeal === 0) {
       return res.status(404).json({ error: "Meal not found" });
     }
     res.json(selectedMeal);
   } catch (err) {
+    console.log(err);
     res.status(500).json({ error: " Failed to find a meal" });
   }
 });

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import "./Meals.css";
+import "../global.css";
 import Meal from "./Meal";
 import Link from "next/link";
 
