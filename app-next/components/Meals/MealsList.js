@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import "./HomePage.css";
+import "./Meals.css";
 import Meal from "./Meal";
+import Link from "next/link";
 
-function MealsList() {
+function MealsList({ maxRows }) {
   const [meals, setMeals] = useState([]);
   const [dataLoadState, setDataLoadState] = useState("LOADING");
 
@@ -43,10 +44,21 @@ function MealsList() {
       <h1>Meals List:</h1>
       <ul className="mealsList">
         {message}
-        {meals.map((meal, index) => {
-          return <Meal key={index} meal={meal} />
-        })}
+        {meals
+          .filter((meal, index) => {
+            return index < maxRows;
+          })
+          .map((meal, index) => {
+            return <Meal key={index} meal={meal} />;
+          })}
       </ul>
+      {meals.length > 5 ? (
+        <Link className="showMoreLink" href="/meals">
+          Show more...
+        </Link>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

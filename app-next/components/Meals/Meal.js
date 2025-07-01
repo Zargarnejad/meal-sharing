@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import "./HomePage.css";
+import "./Meals.css";
 
 function Meal({ meal }) {
   return (
