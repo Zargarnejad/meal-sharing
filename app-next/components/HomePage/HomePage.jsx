@@ -7,10 +7,11 @@ import MealsList from "../Meals/MealsList";
 function HomePage() {
   return (
     <>
-      <div className="welcomeSection">
-        <h1 className="welcomeTitle"> "Share a Meal, Share a Moment"</h1>
-      </div>
-      <MealsList maxRows={6} title="Selected meals are here" displayShowMore={true} />
+      <MealsList
+        maxRows={6}
+        title="Selected meals are here"
+        displayShowMore={true}
+      />
     </>
   );
 }

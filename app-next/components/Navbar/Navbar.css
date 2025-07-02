@@ -38,7 +38,9 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
+.logo {
+  width: 50px;
+}
 .navbarMenuLink:hover {
-  color:navy
+  color: navy;
 }

@@ -7,7 +7,9 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <div className="navbarItem">LOGO</div>
+        <div className="navbarItem">
+          <img src="/logo.png" className="logo" />
+        </div>
         <div className="navbarItem">
           <ul className="navbarMenu">
             <li className="navbarMenuItem">

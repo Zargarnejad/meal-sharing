@@ -60,14 +60,18 @@ export default function MealPage() {
         {meal.map((m, index) => {
           return (
             <div key={index} className="detailsContainer">
-              <h1>{m.title}</h1>
-              <div className="mealDetailRow">
-                <h2>{m.location}</h2>
-                <p>{new Date(m.when).toLocaleString()}</p>
-              </div>
-              <h4>Price: {m.price}</h4>
-              <h4>Max Reservation: {m.max_reservations}</h4>
-              <div className="mealDescription">{m.description}</div>
+              <fieldset>
+                <legend>
+                  <h1>{m.title}</h1>
+                </legend>
+                <div className="mealDetailRow">
+                  <h2>{m.location}</h2>
+                  <p>{new Date(m.when).toLocaleString()}</p>
+                </div>
+                <h4>Price: {m.price}</h4>
+                <h4>Max Reservation: {m.max_reservations}</h4>
+                <div className="mealDescription">{m.description}</div>
+              </fieldset>
               {m.current_reservation_count === "null" ||
               m.current_reservation_count < m.max_reservations ? (
                 <ReserveForm meal={m} />
@@ -78,7 +82,6 @@ export default function MealPage() {
             </div>
           );
         })}
-        
       </div>
     </div>
   );
