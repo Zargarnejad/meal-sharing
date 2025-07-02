@@ -1,0 +1,97 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../assets/mealsharing-bg.jpg");
+  background-size: cover;
+  height: 100%;
+}
+
+.mealContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  background-color: whitesmoke;
+  color: black;
+  width: 1000px;
+  margin-top: 6rem;
+  padding: 2rem;
+  border-top: 1rem solid orange;
+  border-radius: 1rem;
+}
+
+.detailsContainer {
+  width: 100%;
+}
+
+.mealDetailRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5rem;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+.mealDescription {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.formsMainContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: start;
+  background-color: rgba(248, 227, 189, 0.789);
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 1rem;
+  width: 20rem;
+}
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.formRowsContainer {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  row-gap: 0.3rem;
+  width: 100%;
+}
+.formInputContainer {
+  padding-right: 0.5rem;
+}
+
+.formInput {
+  width: 100%;
+}
+.formButtonsContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 0.3rem;
+}
+.submitBtn {
+  color: whitesmoke;
+  background-color: orange;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  border-color: orange;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+.submitBtn:hover {
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+  color: navy;
+}

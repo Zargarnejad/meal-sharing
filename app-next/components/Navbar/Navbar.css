@@ -1,0 +1,46 @@
+.navbar {
+  background-color: orange;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 4rem;
+  align-items: center;
+  margin-top: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.navbarItem {
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.navbarMenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbarMenuItem {
+  list-style-type: none;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.navbarMenuLink {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.logo {
+  width: 50px;
+}
+.navbarMenuLink:hover {
+  color: navy;
+}
