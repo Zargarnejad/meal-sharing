@@ -66,46 +66,51 @@ export default function ReviewForm({ meal }) {
   }
 
   return (
-    <>
-      <form className="formContainer">
+    <div className="formContainer">
+      <form className="form">
         <h3> We are waiting for your feedback</h3>
         {message}
-        <div>
-          Title:
-          <input
-            type="text"
-            name="title"
-            id="title"
-            value={reviewText}
-            onChange={(e) => setReviewText(e.target.value)}
-          />
+        <div className="formRowsContainer">
+          <div>Title:</div>
+          <div className="formInputContainer">
+            <input
+              className="formInput"
+              type="text"
+              name="title"
+              id="title"
+              value={reviewText}
+              onChange={(e) => setReviewText(e.target.value)}
+            />
+          </div>
+          <div>Review:</div>
+          <div className="formInputContainer">
+            <textarea
+              className="formInput"
+              name="description"
+              id="description"
+              rows="5"
+              value={reviewDescription}
+              onChange={(e) => setReviewDescription(e.target.value)}
+            />
+          </div>
+          <div>Rate:</div>
+          <div className="formInputContainer">
+            <select
+              className="formInput"
+              name="rate"
+              id="rate"
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+            >
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </select>
+          </div>
         </div>
-        <div>
-          Description:
-          <textarea
-            name="description"
-            id="description"
-            rows="5"
-            value={reviewDescription}
-            onChange={(e) => setReviewDescription(e.target.value)}
-          />
-        </div>
-        <div>
-          Rate:
-          <select
-            name="rate"
-            id="rate"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-          >
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-          </select>
-        </div>
-        <div>
+        <div className="formButtonsContainer">
           <button
             className="submitBtn"
             type="button"
@@ -126,6 +131,6 @@ export default function ReviewForm({ meal }) {
           </button>
         </div>
       </form>
-    </>
+    </div>
   );
 }

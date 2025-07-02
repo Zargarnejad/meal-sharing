@@ -96,49 +96,57 @@ export default function ReserveForm({ meal }) {
   }
 
   return (
-    <form className="formContainer">
-      <h3>You can book a seat here</h3>
-      {message}
-      <div>
-        Name:
-        <input
-          type="text"
-          name="contact_name"
-          id="contact_name"
-          value={contactName}
-          onChange={(e) => setContactName(e.target.value)}
-        />
-      </div>
-      <div>
-        eMail:
-        <input
-          type="email"
-          name="contact_email"
-          id="contact_email"
-          value={contactEmail}
-          onChange={(e) => setContactEmail(e.target.value)}
-        />
-      </div>
-      <div>
-        Phone:
-        <input
-          type="text"
-          name="contact_phonenumber"
-          id="contact_phonenumber"
-          value={contactPhoneNumber}
-          onChange={(e) => setContactPhoneNumber(e.target.value)}
-        />
-      </div>
-      <div>
-        <button className="submitBtn"
-          type="button"
-          onClick={(e) => {
-            submitForm(e);
-          }}
-        >
-          Book seat
-        </button>
-      </div>
-    </form>
+    <div className="formContainer">
+      <form className="form">
+        <h3>You can book a seat here</h3>
+        {message}
+        <div className="formRowsContainer">
+          <div>Name:</div>
+          <div className="formInputContainer">
+            <input
+              className="formInput"
+              type="text"
+              name="contact_name"
+              id="contact_name"
+              value={contactName}
+              onChange={(e) => setContactName(e.target.value)}
+            />
+          </div>
+          <div>E-Mail:</div>
+          <div className="formInputContainer">
+            <input
+              className="formInput"
+              type="email"
+              name="contact_email"
+              id="contact_email"
+              value={contactEmail}
+              onChange={(e) => setContactEmail(e.target.value)}
+            />
+          </div>
+          <div>Phone:</div>
+          <div className="formInputContainer">
+            <input
+              className="formInput"
+              type="text"
+              name="contact_phonenumber"
+              id="contact_phonenumber"
+              value={contactPhoneNumber}
+              onChange={(e) => setContactPhoneNumber(e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="formButtonsContainer">
+          <button
+            className="submitBtn"
+            type="button"
+            onClick={(e) => {
+              submitForm(e);
+            }}
+          >
+            Book seat
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }

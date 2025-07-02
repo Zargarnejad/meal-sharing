@@ -55,11 +55,11 @@ export default function MealPage() {
 
   return (
     <div className="mainContainer">
-      <div className="mealDetailsContainer">
+      <div className="mealContainer">
         {message}
         {meal.map((m, index) => {
           return (
-            <div key={index}>
+            <div key={index} className="detailsContainer">
               <h1>{m.title}</h1>
               <div className="mealDetailRow">
                 <h2>{m.location}</h2>
@@ -67,7 +67,7 @@ export default function MealPage() {
               </div>
               <h4>Price: {m.price}</h4>
               <h4>Max Reservation: {m.max_reservations}</h4>
-              <div>{m.description}</div>
+              <div className="mealDescription">{m.description}</div>
               {m.current_reservation_count === "null" ||
               m.current_reservation_count < m.max_reservations ? (
                 <ReserveForm meal={m} />
