@@ -17,7 +17,7 @@ function Meal({ meal }) {
         <div>{meal.title}</div>
         <div>{meal.price}</div>
       </h3>
-      <p>{meal.description}</p>
+      <p className="mealsDescription">{meal.description}</p>
     </li>
   );
 }

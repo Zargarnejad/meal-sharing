@@ -6,7 +6,11 @@ import Navbar from "../Navbar/navbar";
 export default function MealsPage() {
   return (
     <>
-      <MealsList maxRows={1000} />
+      <MealsList
+        maxRows={1000}
+        title="All avaialbe meals"
+        displayShowMore={false}
+      />
     </>
   );
 }

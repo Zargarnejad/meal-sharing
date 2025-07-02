@@ -6,7 +6,7 @@ import "../global.css";
 import Meal from "./Meal";
 import Link from "next/link";
 
-function MealsList({ maxRows }) {
+function MealsList({ maxRows, title, displayShowMore }) {
   const [meals, setMeals] = useState([]);
   const [dataLoadState, setDataLoadState] = useState("LOADING");
 
@@ -43,7 +43,7 @@ function MealsList({ maxRows }) {
   return (
     <div className="mainContainer">
       <div className="mealsListContainer">
-        <h1>Selected meals are here</h1>
+        <h1>{title}</h1>
         <ul className="mealsList">
           {message}
           {meals
@@ -54,8 +54,8 @@ function MealsList({ maxRows }) {
               return <Meal key={index} meal={meal} />;
             })}
         </ul>
-        {meals.length > 5 ? (
-          <Link  href="/meals">
+        {displayShowMore && meals.length > 5 ? (
+          <Link href="/meals">
             <button className="showMoreLink"> Show more...</button>
           </Link>
         ) : (
