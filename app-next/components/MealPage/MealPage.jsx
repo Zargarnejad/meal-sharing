@@ -5,6 +5,7 @@ import "../global.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReserveForm from "./ReserveForm";
+import ReviewForm from "./ReviewForm";
 
 export default function MealPage() {
   const [meal, setMeal] = useState([]);
@@ -53,28 +54,32 @@ export default function MealPage() {
   };
 
   return (
-    <div className="mealDetailsContainer">
-      {message}
-      {meal.map((m, index) => {
-        return (
-          <div key={index}>
-            <h1>{m.title}</h1>
-            <div className="mealDetailRow">
-              <h2>{m.location}</h2>
-              <p>{new Date(m.when).toLocaleString()}</p>
+    <div className="mainContainer">
+      <div className="mealDetailsContainer">
+        {message}
+        {meal.map((m, index) => {
+          return (
+            <div key={index}>
+              <h1>{m.title}</h1>
+              <div className="mealDetailRow">
+                <h2>{m.location}</h2>
+                <p>{new Date(m.when).toLocaleString()}</p>
+              </div>
+              <h4>Price: {m.price}</h4>
+              <h4>Max Reservation: {m.max_reservations}</h4>
+              <div>{m.description}</div>
+              {m.current_reservation_count === "null" ||
+              m.current_reservation_count < m.max_reservations ? (
+                <ReserveForm meal={m} />
+              ) : (
+                ""
+              )}
+              <ReviewForm meal={m} />
             </div>
-            <h4>Price: {m.price}</h4>
-            <h4>Max Reservation: {m.max_reservations}</h4>
-            <div>{m.description}</div>
-            {m.current_reservation_count === "null" ||
-            m.current_reservation_count < m.max_reservations ? (
-              <ReserveForm meal={m} />
-            ) : (
-              ""
-            )}
-          </div>
-        );
-      })}
+          );
+        })}
+        
+      </div>
     </div>
   );
 }

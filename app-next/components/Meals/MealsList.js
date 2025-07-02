@@ -41,25 +41,27 @@ function MealsList({ maxRows }) {
   }
 
   return (
-    <div className="mealsListContainer">
-      <h1>Meals List:</h1>
-      <ul className="mealsList">
-        {message}
-        {meals
-          .filter((meal, index) => {
-            return index < maxRows;
-          })
-          .map((meal, index) => {
-            return <Meal key={index} meal={meal} />;
-          })}
-      </ul>
-      {meals.length > 5 ? (
-        <Link className="showMoreLink" href="/meals">
-          Show more...
-        </Link>
-      ) : (
-        ""
-      )}
+    <div className="mainContainer">
+      <div className="mealsListContainer">
+        <h1>Selected meals are here</h1>
+        <ul className="mealsList">
+          {message}
+          {meals
+            .filter((meal, index) => {
+              return index < maxRows;
+            })
+            .map((meal, index) => {
+              return <Meal key={index} meal={meal} />;
+            })}
+        </ul>
+        {meals.length > 5 ? (
+          <Link  href="/meals">
+            <button className="showMoreLink"> Show more...</button>
+          </Link>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 }

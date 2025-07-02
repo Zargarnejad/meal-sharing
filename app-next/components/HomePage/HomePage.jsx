@@ -11,6 +11,7 @@ function HomePage() {
         <h1 className="welcomeTitle"> "Share a Meal, Share a Moment"</h1>
       </div>
       <MealsList maxRows={6} />
+      
     </>
   );
 }

@@ -96,7 +96,8 @@ export default function ReserveForm({ meal }) {
   }
 
   return (
-    <form>
+    <form className="formContainer">
+      <h3>You can book a seat here</h3>
       {message}
       <div>
         Name:
@@ -129,7 +130,7 @@ export default function ReserveForm({ meal }) {
         />
       </div>
       <div>
-        <button
+        <button className="submitBtn"
           type="button"
           onClick={(e) => {
             submitForm(e);

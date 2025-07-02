@@ -1,10 +1,26 @@
+.mainContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../../assets/mealsharing-bg.jpg");
+  background-size: cover;
+  height: 100%;
+
+}
+
 .mealDetailsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 2rem;
-  background-color: white;
+  background-color: whitesmoke;
   color: black;
+  width: 50%;
+  margin-top: 6rem;
+  padding: 2rem;
+  border-top: 1rem solid orange;
+  border-radius: 1rem;
+
 }
 
 .mealDetailRow {
@@ -13,4 +29,38 @@
   justify-content: space-between;
   gap: 5rem;
   align-items: center;
+  padding-bottom: 1rem;
+}
+.formsMainContainer{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between;
+
+}
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  gap:0.5rem;
+  align-items: start;
+  background-color: rgba(248, 227, 189, 0.789);
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  padding: 1rem;
+  width: 80%;
+}
+
+.submitBtn{
+  color: whitesmoke;
+  background-color:orange ;
+  border-radius:0.3rem;
+  padding: 0.3rem;
+  border-color: orange;
+  cursor: pointer;
+}
+.submitBtn:hover{
+  background-color: whitesmoke;
+  border-color:whitesmoke ;
+  color:navy;
 }
