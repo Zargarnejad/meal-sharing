@@ -15,22 +15,22 @@ export default function MealPage() {
   const pathname = usePathname();
   const mealId = pathname.split("/")[2];
 
+  const fetchMealDetails = async () => {
+    const mealResponse = await fetch(
+      `http://localhost:3001/api/meals/${mealId}`
+    )
+      .then((response) => response.json())
+      .catch((e) => {
+        setDataLoadState("LOADING_FAILED");
+      });
+
+    if (mealResponse !== undefined) {
+      setDataLoadState("LOADING_SUCCEEDED");
+      setMeal(mealResponse);
+    }
+  };
+
   useEffect(() => {
-    const fetchMealDetails = async () => {
-      const mealResponse = await fetch(
-        `http://localhost:3001/api/meals/${mealId}`
-      )
-        .then((response) => response.json())
-        .catch((e) => {
-          setDataLoadState("LOADING_FAILED");
-        });
-
-      if (mealResponse !== undefined) {
-        setDataLoadState("LOADING_SUCCEEDED");
-        setMeal(mealResponse);
-      }
-    };
-
     fetchMealDetails();
   }, []);
 
@@ -49,10 +49,9 @@ export default function MealPage() {
       break;
   }
 
-  const showReserveForm = (e) => {
-    setReserveFormVisible(true);
+  const handleSuccessReserve = (e) => {
+    fetchMealDetails();
   };
-
   return (
     <div className="mainContainer">
       <div className="mealContainer">
@@ -70,11 +69,15 @@ export default function MealPage() {
                 </div>
                 <h4>Price: {m.price}</h4>
                 <h4>Max Reservation: {m.max_reservations}</h4>
+                <h4>
+                  Available Reservation:{" "}
+                  {m.max_reservations - m.current_reservation_count}
+                </h4>
                 <div className="mealDescription">{m.description}</div>
               </fieldset>
               {m.current_reservation_count === "null" ||
               m.current_reservation_count < m.max_reservations ? (
-                <ReserveForm meal={m} />
+                <ReserveForm meal={m} onSuccess={handleSuccessReserve} />
               ) : (
                 ""
               )}

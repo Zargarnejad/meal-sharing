@@ -198,7 +198,7 @@ mealsRouter.get("/:id", validateId, async (req, res) => {
         "res.meal_id"
       )
       .where({ id })
-      .select("*");
+      .select("m.*", "res.current_reservation_count");
     if (selectedMeal === 0) {
       return res.status(404).json({ error: "Meal not found" });
     }

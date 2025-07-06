@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import { useRouter } from "next/navigation";
 
-export default function ReserveForm({ meal }) {
+export default function ReserveForm({ meal, onSuccess }) {
   const [submitState, setSubmitState] = useState("NOT_SUBMITTED");
   const [validationError, setValidationError] = useState("");
   const [contactName, setContactName] = useState("");
@@ -68,6 +68,7 @@ export default function ReserveForm({ meal }) {
         setContactName("");
         setContactEmail("");
         setContactPhoneNumber("");
+        onSuccess();
       }
     };
 
