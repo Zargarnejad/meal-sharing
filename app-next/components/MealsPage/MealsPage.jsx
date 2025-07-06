@@ -5,7 +5,7 @@ export default function MealsPage() {
     <>
       <MealsList
         maxRows={1000}
-        title="All avaialbe meals"
+        title="All avaiable meals for sharing"
         displayShowMore={false}
       />
     </>
