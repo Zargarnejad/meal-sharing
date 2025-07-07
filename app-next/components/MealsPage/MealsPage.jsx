@@ -5,7 +5,8 @@ export default function MealsPage() {
     <>
       <MealsList
         maxRows={1000}
-        title="All avaiable meals for sharing"
+        title="Fresh meals, made with love — pick your favorite."
+
         displayShowMore={false}
       />
     </>

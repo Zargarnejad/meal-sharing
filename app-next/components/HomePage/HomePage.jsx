@@ -7,9 +7,16 @@ import MealsList from "../Meals/MealsList";
 function HomePage() {
   return (
     <>
+      <div className="heroContainer">
+        <div>
+          <h1 className="welcomeTitle ">
+            "Because meals are better when shared."
+          </h1>
+        </div>
+      </div>
       <MealsList
         maxRows={6}
-        title="Selected meals are here"
+        title=" “What’s cooking near you today?”"
         displayShowMore={true}
       />
     </>

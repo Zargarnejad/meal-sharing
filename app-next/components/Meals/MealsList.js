@@ -81,7 +81,7 @@ function MealsList({ maxRows, title, displayShowMore }) {
       searchMessage = "";
       break;
     case "SEARCHING_SUCCEEDED":
-      message = `Results for:${search}`;
+      searchMessage = `Results for: ${search}`;
       break;
     case "NO_SEACRH_TERM":
       searchMessage = "Please enter a value to search for!";
@@ -97,7 +97,7 @@ function MealsList({ maxRows, title, displayShowMore }) {
   return (
     <div>
       <div className="titleStyle">
-        <h1>{title}</h1>
+        <h2>{title}</h2>
       </div>
       <div className="searchMainContainer">
         <div className="searchContainer">
@@ -117,7 +117,7 @@ function MealsList({ maxRows, title, displayShowMore }) {
       </div>
       <div className="sortMainContainer">
         <div className="sortContainer">
-          <label>Sort meals by:</label>
+          <label>Sort by:</label>
           <select
             className="sortSelectArea"
             value={sort}
@@ -128,16 +128,17 @@ function MealsList({ maxRows, title, displayShowMore }) {
             <option value="price">Price</option>
           </select>
         </div>
-        <div className="sortContainer"></div>
-        <label>Sort direction:</label>
-        <select
-          className="sortSelectArea"
-          value={sortDirection}
-          onChange={(e) => setSortDirection(e.target.value)}
-        >
-          <option value="asc">Ascending</option>
-          <option value="desc">Descending</option>
-        </select>
+        <div className="sortContainer">
+          <label>Direction:</label>
+          <select
+            className="sortSelectArea"
+            value={sortDirection}
+            onChange={(e) => setSortDirection(e.target.value)}
+          >
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </div>
       </div>
 
       <div className="mainContainer">

@@ -19,17 +19,17 @@
   justify-content: center;
 }
 .inputBox {
-  border: solid orange;
+  border: solid #f97316;
   border-radius: 1.2rem;
   padding: 0.75rem;
   font-size: medium;
 }
 .searchBtn {
-  color: whitesmoke;
+  color: 	#f9f9f9;
   font-weight: bolder;
   font-size: medium;
-  background-color: orange;
-  border: solid orange;
+  background-color: #FF6B00;
+  border: solid #FF6B00;
   border-radius: 1.2rem;
   height: auto;
   padding: 0.75rem;
@@ -38,24 +38,27 @@
 .searchBtn:hover {
   color: black;
   cursor: pointer;
-  background-color: orange;
+  background-color: #FF8800;
 }
 .searchMessage {
   font-size: medium;
   font-weight: bold;
-  color: #555556;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2e2e2e ;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
 }
+
 .sortMainContainer {
   display: flex;
   flex-direction: row;
-
-  align-items: baseline;
-  color: #555556;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2e2e2e ;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-size: medium;
   font-weight: bold;
+  width: 75%;
+  margin: 0 auto 1rem auto;
+  
 }
+
 .sortContainer {
   display: flex;
   flex-direction: row;
@@ -63,14 +66,14 @@
   padding: 0.5rem;
   text-align: left;
   align-items: baseline;
-  margin-left: 2rem;
+
 }
 .sortSelectArea {
-  color: #555556;
+  color: white;
   font-weight: bold;
   font-size: medium;
-  background-color: whitesmoke;
-  border: solid whitesmoke;
+  background-color: #FF6B00;
+  border: solid #FF6B00;
   border-radius: 1.2rem;
 
   padding: 0.75rem;
@@ -78,8 +81,8 @@
 }
 
 .mealsListContainer {
-  color: #555556;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2e2e2e ;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,8 +90,8 @@
   margin: 2rem;
 }
 .titleStyle {
-  color: #555556;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2e2e2e ;
+  /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   align-items: center;
   margin-top: 1.5rem;
   text-align: center;
@@ -109,45 +112,61 @@
 
 .mealsListItem {
   list-style: none;
-  background-color: whitesmoke;
-  border-top: solid 0.5rem orange;
+  background-color: 	#f9f9f9;
+  border-top: solid 0.3rem #f97316;
   box-shadow: 0.15rem 0.15rem #e8e8ea;
   border-radius: 1rem;
-  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  padding: 1rem 1.5rem 1.5rem 1rem;
   cursor: pointer;
-  height: 150px;
+  height: 15rem;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
+.mealsListItem:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mealsItemImg{
+    width: 100%;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
 .mealsItemTitle {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+padding-top: 0.3rem;
 }
 
 .mealsListItemLocation {
   margin-top: 0rem;
   color: #424244;
+  padding-top: 0.3rem;
+
 }
 .mealsDescription {
   text-overflow: ellipsis;
   overflow: hidden;
 }
 .showMoreLink {
-  color: whitesmoke;
+  color: 	#f9f9f9;
   font-weight: bolder;
   font-size: x-large;
   margin-top: 2rem;
-  background-color: orange;
-  border: solid orange;
+  background-color: #FF6B00;
+  border: solid #FF6B00;
   border-radius: 1.2rem;
   height: auto;
   padding: 0.75rem;
 }
 .showMoreLink:hover {
   cursor: pointer;
-  background-color: orange;
+  background-color: #FF8800;
   color: black;
 }
 

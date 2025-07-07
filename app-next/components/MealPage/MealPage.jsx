@@ -63,6 +63,13 @@ export default function MealPage() {
                 <legend>
                   <h1>{m.title}</h1>
                 </legend>
+                <img
+                  className="mealPageImg"
+                  src="/food.jpg"
+                  alt={m.title}
+                  loading="lazy"
+                />
+
                 <div className="mealDetailRow">
                   <h2>{m.location}</h2>
                   <p>{new Date(m.when).toLocaleString()}</p>
