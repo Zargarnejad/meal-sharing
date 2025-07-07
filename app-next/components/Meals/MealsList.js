@@ -81,16 +81,16 @@ function MealsList({ maxRows, title, displayShowMore }) {
       searchMessage = "";
       break;
     case "SEARCHING_SUCCEEDED":
-      searchMessage = `Results for: ${search}`;
+      searchMessage = `check result below`;
       break;
     case "NO_SEACRH_TERM":
       searchMessage = "Please enter a value to search for!";
       break;
     case "NO_SEACRH_RESULT":
-      searchMessage = `NO result found for ${search}`;
+      searchMessage = `NO result found.`;
       break;
     case "SEARCHING_FAILED":
-      searchMessage = `Error searching for ${search}`;
+      searchMessage = `Error infeching search result`;
       break;
   }
 

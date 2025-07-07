@@ -57,7 +57,7 @@ export default function ReviewForm({ meal }) {
       break;
     case "SUBMIT_SUCCEEDED":
       message = (
-        <div className="successMessage">Your review submitted successfully</div>
+        <div className="successMessage">Your review submitted.</div>
       );
       break;
     case "VALIDATION_FAILED":

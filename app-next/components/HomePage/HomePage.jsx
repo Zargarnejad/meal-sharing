@@ -8,12 +8,18 @@ function HomePage() {
   return (
     <>
       <div className="heroContainer">
-        <div>
-          <h1 className="welcomeTitle ">
-            "Because meals are better when shared."
-          </h1>
+        <div className="heroOverlay">
+          <div className="heroContent">
+            <h1 className="welcomeTitle ">Taste the World at a Local Table </h1>
+            <p>
+              Join a global community of food lovers sharing unique dining
+              experiences right where they live.
+            </p>
+            <h3>Find a Meal Experience</h3>
+          </div>
         </div>
       </div>
+
       <MealsList
         maxRows={6}
         title=" “What’s cooking near you today?”"

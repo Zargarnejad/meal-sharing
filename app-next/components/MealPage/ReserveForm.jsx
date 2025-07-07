@@ -88,7 +88,7 @@ export default function ReserveForm({ meal, onSuccess }) {
       break;
     case "SUBMIT_SUCCEEDED":
       message = (
-        <div className="successMessage">One seat booked successfully</div>
+        <div className="successMessage">One seat booked.</div>
       );
       break;
     case "VALIDATION_FAILED":
