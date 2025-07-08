@@ -19,12 +19,39 @@ function HomePage() {
           </div>
         </div>
       </div>
+      <div className="missionMainContainer">
+        <div className="missionContainer">
+          <div className="missionLeftSide"></div>
+          <div className="missionRightSide">
+            <h2>Our Mission</h2>
+            <p>
+              At MealShare, we bring people together through food. Our mission
+              is to connect cultures, support local cooks, and make every meal
+              an unforgettable experience.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <MealsList
         maxRows={6}
         title=" “What’s cooking near you today?”"
         displayShowMore={true}
       />
+
+      <div className="missionMainContainer">
+        <div className="missionContainer">
+          <div className="missionLeftSide"></div>
+          <div className="missionRightSide">
+            <h2>Our Mission</h2>
+            <p>
+              At MealShare, we bring people together through food. Our mission
+              is to connect cultures, support local cooks, and make every meal
+              an unforgettable experience.
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

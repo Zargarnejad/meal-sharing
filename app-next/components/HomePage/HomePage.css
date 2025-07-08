@@ -17,6 +17,52 @@ body {
   position: relative;
 }
 
+.missionMainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #fefefe;
+  padding: 3rem 0;
+}
+
+.missionContainer {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  max-width: 1200px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.missionLeftSide {
+  width: 50%;
+  background-image: url("/food.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 25rem;
+}
+
+.missionRightSide {
+  width: 50%;
+  background-color: #fff;
+  padding: 2rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.missionRightSide h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #f97316;
+}
+
+.missionRightSide p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
 .heroOverlay {
   width: 100%;
   height: 85vh;
