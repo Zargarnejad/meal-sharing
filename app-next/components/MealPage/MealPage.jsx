@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReserveForm from "./ReserveForm";
 import ReviewForm from "./ReviewForm";
+import Reviews from "../Review/Reviews";
 
 export default function MealPage() {
   const [meal, setMeal] = useState([]);
@@ -108,7 +109,9 @@ export default function MealPage() {
                     Add Review
                   </button>
                 </div>
+                <Reviews mealId={m.id} />
               </fieldset>
+
               <div className={reserveFormVisible ? "" : "hidden"}>
                 <ReserveForm
                   meal={m}
