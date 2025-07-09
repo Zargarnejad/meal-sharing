@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./MealPage.css";
-export default function ReviewForm({ meal }) {
+export default function ReviewForm({ meal, onClose }) {
   const [reviewText, setReviewText] = useState("");
   const [reviewDescription, setReviewDescription] = useState("");
   const [rating, setRating] = useState(5);
@@ -11,6 +11,11 @@ export default function ReviewForm({ meal }) {
     setReviewText("");
     setReviewDescription("");
     setRating(5);
+  };
+
+  const handleCloseButton = (e) => {
+    e.preventDefault();
+    onClose();
   };
 
   const submitForm = async (e) => {
@@ -24,7 +29,7 @@ export default function ReviewForm({ meal }) {
       meal_id: meal.id,
       title: reviewText,
       description: reviewDescription,
-      stars: rating,
+      stars: Number(rating),
     };
 
     try {
@@ -56,9 +61,7 @@ export default function ReviewForm({ meal }) {
       );
       break;
     case "SUBMIT_SUCCEEDED":
-      message = (
-        <div className="successMessage">Your review submitted.</div>
-      );
+      message = <div className="successMessage">Your review submitted.</div>;
       break;
     case "VALIDATION_FAILED":
       message = <div className="errorMessage">{validationError}</div>;
@@ -68,7 +71,10 @@ export default function ReviewForm({ meal }) {
   return (
     <div className="formContainer">
       <form className="form">
-        <h3> We are waiting for your feedback</h3>
+        <div className="formTitleContainer">
+          <h3>Your Opinion Matters</h3>
+          <button onClick={handleCloseButton}>X</button>
+        </div>
         {message}
         <div className="formRowsContainer">
           <div>Title:</div>

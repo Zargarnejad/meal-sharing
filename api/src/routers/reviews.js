@@ -25,7 +25,7 @@ reviewsRouter.post("/", async (req, res) => {
   if (!stars || typeof stars !== "number" || stars < 0 || stars > 5) {
     return res
       .status(400)
-      .json({ error: "meal_id is required and must be a number." });
+      .json({ error: "stars is required and must be a number." });
   }
   try {
     await knex("review").insert({

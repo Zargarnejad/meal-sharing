@@ -11,6 +11,7 @@ export default function MealPage() {
   const [meal, setMeal] = useState([]);
   const [dataLoadState, setDataLoadState] = useState("LOADING");
   const [reserveFormVisible, setReserveFormVisible] = useState(false);
+  const [reviewFormVisible, setReviewFormVisible] = useState(false);
 
   const pathname = usePathname();
   const mealId = pathname.split("/")[2];
@@ -81,14 +82,46 @@ export default function MealPage() {
                   {m.max_reservations - m.current_reservation_count}
                 </h4>
                 <div className="mealDescription">{m.description}</div>
+                <div className="formButtonsContainer">
+                  <button
+                    className="submitBtn"
+                    type="button"
+                    onClick={(e) => {
+                      setReserveFormVisible(true);
+                      setReviewFormVisible(false);
+                    }}
+                    disabled={
+                      m.current_reservation_count !== "null" &&
+                      m.current_reservation_count >= m.max_reservations
+                    }
+                  >
+                    Book seat
+                  </button>
+                  <button
+                    className="submitBtn"
+                    type="button"
+                    onClick={(e) => {
+                      setReviewFormVisible(true);
+                      setReserveFormVisible(false);
+                    }}
+                  >
+                    Add Review
+                  </button>
+                </div>
               </fieldset>
-              {m.current_reservation_count === "null" ||
-              m.current_reservation_count < m.max_reservations ? (
-                <ReserveForm meal={m} onSuccess={handleSuccessReserve} />
-              ) : (
-                ""
-              )}
-              <ReviewForm meal={m} />
+              <div className={reserveFormVisible ? "" : "hidden"}>
+                <ReserveForm
+                  meal={m}
+                  onSuccess={handleSuccessReserve}
+                  onClose={() => setReserveFormVisible(false)}
+                />
+              </div>
+              <div className={reviewFormVisible ? "" : "hidden"}>
+                <ReviewForm
+                  meal={m}
+                  onClose={() => setReviewFormVisible(false)}
+                />
+              </div>
             </div>
           );
         })}

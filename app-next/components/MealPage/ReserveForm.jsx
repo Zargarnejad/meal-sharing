@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import { useRouter } from "next/navigation";
 
-export default function ReserveForm({ meal, onSuccess }) {
+export default function ReserveForm({ meal, onSuccess, onClose }) {
   const [submitState, setSubmitState] = useState("NOT_SUBMITTED");
   const [validationError, setValidationError] = useState("");
   const [contactName, setContactName] = useState("");
@@ -15,6 +15,11 @@ export default function ReserveForm({ meal, onSuccess }) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+
+  const handleCloseButton = (e) => {
+    e.preventDefault();
+    onClose();
+  }
 
   const submitForm = (e) => {
     if (contactName.trim().length === 0) {
@@ -87,9 +92,7 @@ export default function ReserveForm({ meal, onSuccess }) {
       );
       break;
     case "SUBMIT_SUCCEEDED":
-      message = (
-        <div className="successMessage">One seat booked.</div>
-      );
+      message = <div className="successMessage">One seat booked.</div>;
       break;
     case "VALIDATION_FAILED":
       message = <div className="errorMessage">{validationError}</div>;
@@ -99,7 +102,10 @@ export default function ReserveForm({ meal, onSuccess }) {
   return (
     <div className="formContainer">
       <form className="form">
-        <h3>You can book a seat here</h3>
+        <div className="formTitleContainer">
+          <h3>You can book a seat here</h3>
+          <button onClick={handleCloseButton}>X</button>
+        </div>
         {message}
         <div className="formRowsContainer">
           <div>Name:</div>
