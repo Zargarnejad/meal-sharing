@@ -117,4 +117,22 @@ body {
 }
 
 
+@media (max-width: 768px) {
+  .aboutUsContainer {
+    flex-direction: column;
+  }
+
+  .aboutUsLeftSide,
+  .aboutUsRightSide {
+    width: 100%;
+  }
+
+  .aboutUsLeftSide {
+    min-height: 15rem;
+  }
+
+  .aboutUsRightSide {
+    padding: 1.5rem;
+  }
+}
 

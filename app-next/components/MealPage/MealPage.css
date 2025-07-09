@@ -5,6 +5,7 @@
   /* background-image: url("../../assets/mealsharing-bg.jpg"); */
   background-size: cover;
   height: 100%;
+  margin-bottom:3rem;
 }
 
 .mealContainer {
@@ -15,7 +16,7 @@
   background-color:	#f9f9f9;
   color: black;
   width: 1000px;
-  margin-top: 6rem;
+  margin-top: 3rem;
   padding: 2rem;
   border-top: 1rem solid #f97316;
   border-radius: 1rem;

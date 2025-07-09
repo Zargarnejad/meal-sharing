@@ -22,6 +22,11 @@ export default function Navbar() {
                 Meals
               </Link>
             </li>
+            <li className="navbarMenuItem">
+              <Link href="/about-us" className="navbarMenuLink">
+                About-us
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
