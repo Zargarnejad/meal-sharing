@@ -1,11 +1,10 @@
-
 .aboutUsMainContainer {
   display: flex;
   justify-content: center;
   width: 100%;
   background-color: #fefefe;
   padding: 3rem 0;
-margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .aboutUsContainer {
@@ -21,7 +20,7 @@ margin-top: 2rem;
 .aboutUsLeftSide {
   width: 55%;
   background-image: url("/aboutUs.jpg");
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   min-height: 25rem;
 }
@@ -42,7 +41,11 @@ margin-top: 2rem;
   color: #f97316;
 }
 
-.aboutUsRightSide p {
+.aboutUsRightSide div {
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.aboutUsRightSide h4 {
+  margin-top: 1rem;
 }
