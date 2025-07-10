@@ -37,7 +37,7 @@ body {
 
 .missionLeftSide {
   width: 50%;
-  background-image: url("/food.jpg");
+  background-image: url("/homePageMission.jpg");
   background-size: cover;
   background-position: center;
   min-height: 25rem;
@@ -63,6 +63,33 @@ body {
   font-size: 1rem;
   line-height: 1.6;
 }
+.messageRightSide{
+  width: 50%;
+  background-image: url("/homePageMessage.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 25rem;
+}
+.messageLeftSide{
+  width: 50%;
+  background-color: #fff;
+  padding: 2rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.messageLeftSide h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #f97316;
+}
+
+.messageLeftSide p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 .heroOverlay {
   width: 100%;
   height: 85vh;

@@ -67,7 +67,7 @@ export default function MealPage() {
                 </legend>
                 <img
                   className="mealPageImg"
-                  src="/food.jpg"
+                  src={`/mealPhoto/${m.id}.jpg`}
                   alt={m.title}
                   loading="lazy"
                 />

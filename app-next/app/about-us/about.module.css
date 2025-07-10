@@ -12,16 +12,16 @@ margin-top: 2rem;
   display: flex;
   flex-direction: row;
   width: 85%;
-  max-width: 1200px;
+  max-width: 1300px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   border-radius: 1rem;
 }
 
 .aboutUsLeftSide {
-  width: 50%;
-  background-image: url("/food.jpg");
-  background-size: cover;
+  width: 55%;
+  background-image: url("/aboutUs.jpg");
+  background-size:cover;
   background-position: center;
   min-height: 25rem;
 }

@@ -11,9 +11,16 @@ function Meal({ meal }) {
     const router = useRouter();
 
   return (
-    <li className="mealsListItem"
-    onClick={(e) => router.push(`/meals/${meal.id}`)}>
-      <img className="mealsItemImg" src="/food.jpg" alt={meal.title} />
+    <li
+      className="mealsListItem"
+      onClick={(e) => router.push(`/meals/${meal.id}`)}
+    >
+      <img
+        className="mealsItemImg"
+        src={`/mealPhoto/${meal.id}.jpg`}
+        alt={meal.title}
+        loading="lazy"
+      />
       <div className="mealsItemTitle">
         <h3>{meal.title}</h3>
         <span>{meal.price}€</span>
