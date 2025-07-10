@@ -17,8 +17,9 @@ export default function AboutPage() {
               <br />
             </p>
             <p>
-              <h3>🍽 Our Mission</h3> To make dining more personal by allowing
-              people to:
+              <b>🍽 Our Mission</b>
+              <br />
+              To make dining more personal by allowing people to:
               <ul>
                 <li>Share home-cooked meals</li>
                 <li>Discover new cultures through food</li>
@@ -26,7 +27,9 @@ export default function AboutPage() {
               </ul>
             </p>
             <p>
-              <h3>🌍 What We Offer</h3>
+              <b>🌍 What We Offer</b>
+              <br />
+
               <ul>
                 <li>
                   Host a meal: Cook your favorite dish and open your table to
@@ -43,7 +46,8 @@ export default function AboutPage() {
               </ul>
             </p>
             <p>
-              <h3>🤝 Why We Do It</h3>
+              <b>🤝 Why We Do It</b>
+              <br />
               In a world moving fast, we slow down — one meal at a time.
               <br />
               We believe in real conversations, local experiences, and that

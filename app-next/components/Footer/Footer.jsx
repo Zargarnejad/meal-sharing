@@ -12,7 +12,7 @@ export default function Footer() {
             <li className="footerSocialmediaLink">
               <SocialMediaItem
                 title="Facebook"
-                url="https://facebook.com"
+                url="https://www.facebook.com/"
                 icon="/social-media/facebook.png"
               />
             </li>
