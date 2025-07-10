@@ -4,11 +4,8 @@ import { useState, useEffect } from "react";
 import "./Meals.css";
 import { useRouter } from "next/navigation";
 
-
-
-
 function Meal({ meal }) {
-    const router = useRouter();
+  const router = useRouter();
 
   return (
     <li
