@@ -7,8 +7,13 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <div className="navbarItem">
-          <img src="/logo.png" className="logo" />
+        <div className="logoContainer">
+          <div className="navbarItem">
+            <img src="/logo.png" className="logo" />
+          </div>
+          <div>
+            <h4 className="logoTitle">MealSharing</h4>
+          </div>
         </div>
         <div className="navbarItem">
           <ul className="navbarMenu">
@@ -24,7 +29,7 @@ export default function Navbar() {
             </li>
             <li className="navbarMenuItem">
               <Link href="/about-us" className="navbarMenuLink">
-                About-us
+                About us
               </Link>
             </li>
           </ul>

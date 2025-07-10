@@ -44,16 +44,16 @@ function HomePage() {
           <div className="messageLeftSide">
             <h2>Our Message</h2>
             <p>
-              <h4>"Every meal has a story"</h4> 
-              Even the simplest one. Whether
-              it’s your signature dish or just something you love to cook, don’t
-              keep it to yourself. 
-              <br/>
-              Invite others to gather around your table,
-              share flavors, laughter, and good conversation. Because food isn't
-              just about eating — it's about connection.
-              <br/> Let’s create memories,
-              one shared meal at a time."
+              <b>"Every meal has a story"</b>
+              <br />
+              <br />
+              Even the simplest one. Whether it’s your signature dish or just
+              something you love to cook, don’t keep it to yourself.
+              <br />
+              Invite others to gather around your table, share flavors,
+              laughter, and good conversation. Because food isn't just about
+              eating — it's about connection.
+              <br /> Let’s create memories, one shared meal at a time."
             </p>
           </div>
           <div className="messageRightSide"></div>

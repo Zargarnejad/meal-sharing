@@ -116,11 +116,13 @@ body {
 }
 
 .welcomeTitle {
-  font-size:xx-large;
-  font-weight:800;
+  
+  /* font-weight:800; */
   color: #f9f9f9;
   margin-top: 10rem;
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 
 .navBar {
