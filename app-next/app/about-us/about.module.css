@@ -1,0 +1,51 @@
+.aboutUsMainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #fefefe;
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+
+.aboutUsContainer {
+  display: flex;
+  flex-direction: row;
+  width: 85%;
+  max-width: 1300px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.aboutUsLeftSide {
+  width: 55%;
+  background-image: url("/aboutUs.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 25rem;
+}
+
+.aboutUsRightSide {
+  width: 50%;
+  background-color: #fff;
+  padding: 2rem;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutUsRightSide h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #f97316;
+}
+
+.aboutUsRightSide div {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.aboutUsRightSide h4 {
+  margin-top: 1rem;
+}
