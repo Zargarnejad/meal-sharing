@@ -1,6 +1,6 @@
 import "./globals.css";
-import Navbar from "../components/Navbar/navbar";
-import Footer from "../components/Footer/Footer";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
   title: "HackYourFuture",
