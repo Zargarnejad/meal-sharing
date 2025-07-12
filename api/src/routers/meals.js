@@ -79,7 +79,7 @@ mealsRouter.get("/", async (req, res) => {
         .status(400)
         .json({ error: "dateAfter must be in YYYY-MM-DD format" });
     } else {
-      query = query.where("when", ">", dateAfter);
+      query = query.where('"when"', ">", dateAfter);
     }
   }
 
@@ -93,7 +93,7 @@ mealsRouter.get("/", async (req, res) => {
         .status(400)
         .json({ error: "dateBefore must be in YYYY-MM-DD format" });
     } else {
-      query = query.where("when", "<", dateBefore);
+      query = query.where('"when"', "<", dateBefore);
     }
   }
 
@@ -102,7 +102,7 @@ mealsRouter.get("/", async (req, res) => {
     const validColumns = ["when", "max_reservations", "price"];
     if (validColumns.includes(sortKey)) {
       if (sortKey === "when") {
-        sortKey = "`when`";
+        sortKey = '"when"';
       }
 
       let sortDir = req.query.sortDir;
