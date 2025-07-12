@@ -19,7 +19,7 @@ function MealsList({ maxRows, title, displayShowMore }) {
       serchedMeals();
     } else {
       const mealsResponse = await fetch(
-        `http://localhost:3001/api/meals/?sortKey=${sort}&sortDir=${sortDirection}`
+        `${process.env.NEXT_PUBLIC_API_URL}/api/meals/?sortKey=${sort}&sortDir=${sortDirection}`
       )
         .then((response) => response.json())
         .catch((e) => {
@@ -43,7 +43,7 @@ function MealsList({ maxRows, title, displayShowMore }) {
       setMeals([]);
     } else {
       const mealsResponse = await fetch(
-        `http://localhost:3001/api/meals/?title=${search}&sortKey=${sort}&sortDir=${sortDirection}`
+        `${process.env.NEXT_PUBLIC_API_URL}/api/meals/?title=${search}&sortKey=${sort}&sortDir=${sortDirection}`
       )
         .then((response) => response.json())
         .catch((e) => {

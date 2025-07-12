@@ -19,7 +19,7 @@ export default function MealPage() {
 
   const fetchMealDetails = async () => {
     const mealResponse = await fetch(
-      `http://localhost:3001/api/meals/${mealId}`
+      `${process.env.NEXT_PUBLIC_API_URL}/api/meals/${mealId}`
     )
       .then((response) => response.json())
       .catch((e) => {

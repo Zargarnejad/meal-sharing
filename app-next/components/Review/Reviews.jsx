@@ -5,7 +5,7 @@ export default function Reviews({ mealId }) {
 
   const fetchReviews = async () => {
     const reviewsResponse = await fetch(
-      `http://localhost:3001/api/meals/${mealId}/reviews`
+      `${process.env.NEXT_PUBLIC_API_URL}/api/meals/${mealId}/reviews`
     )
       .then((response) => response.json())
       .catch((e) => {

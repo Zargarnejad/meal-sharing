@@ -33,11 +33,14 @@ export default function ReviewForm({ meal, onClose }) {
     };
 
     try {
-      const res = await fetch("http://localhost:3001/api/reviews", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(reviewData),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/reviews`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(reviewData),
+        }
+      );
 
       if (res.ok) {
         setSubmitState("SUBMIT_SUCCEEDED");

@@ -47,7 +47,7 @@ export default function ReserveForm({ meal, onSuccess, onClose }) {
 
     const reserveSeat = async () => {
       const reserveResponse = await fetch(
-        `http://localhost:3001/api/reservations`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/reservations`,
         {
           method: "POST",
           headers: {
