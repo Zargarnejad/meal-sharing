@@ -75,9 +75,9 @@
   background-color: #FF6B00;
   border: solid #FF6B00;
   border-radius: 1.2rem;
-
   padding: 0.75rem;
   cursor: pointer;
+  width: 14rem;
 }
 
 .mealsListContainer {
@@ -180,5 +180,11 @@ padding-top: 0.3rem;
   .mealsList {
     grid-template-columns: 1fr;
     row-gap: 2rem;
+  }
+  .sortMainContainer {
+    flex-direction: column;
+  }
+  .sortContainer {
+        justify-content: space-between;
   }
 }
