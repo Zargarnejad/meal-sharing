@@ -11,12 +11,13 @@ reviewsRouter.get("/", async (req, res) => {
 
 reviewsRouter.post("/", async (req, res) => {
   const { title, description, meal_id, stars } = req.body;
+  console.log(title, description, Number.isNaN(meal_id), stars);
   if (!title || typeof title !== "string" || title.length === 0) {
     return res
       .status(400)
       .json({ error: "Title is required and must be a string." });
   }
-  if (!meal_id || typeof meal_id !== "number" || meal_id < 0) {
+  if (Number.isNaN(meal_id) || meal_id < 0) {
     return res
       .status(400)
       .json({ error: "meal_id is required and must be a positive number." });
@@ -24,7 +25,7 @@ reviewsRouter.post("/", async (req, res) => {
   if (!stars || typeof stars !== "number" || stars < 0 || stars > 5) {
     return res
       .status(400)
-      .json({ error: "meal_id is required and must be a number." });
+      .json({ error: "stars is required and must be a number." });
   }
   try {
     await knex("review").insert({
