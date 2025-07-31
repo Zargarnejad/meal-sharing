@@ -1,30 +1,30 @@
 
-🍽️ MealSharing App
+*** MealSharing App ***
 MealSharing is a full-stack web application built with React.js and designed to connect people through the joy of food. Users can explore meals offered by hosts, reserve seats, and leave reviews after enjoying their meal experience. The app encourages community bonding, even over the simplest homemade dishes.
 
-🌟 Features
-✅ Browse a list of available meals with images and key details
+*** Features ***
+ 1.Browse a list of available meals with images and key details
 
-✅ Make reservations with contact information and guest count
+ 2.Make reservations with contact information and guest count
 
-✅ Submit reviews with star ratings and feedback
+ 3.Submit reviews with star ratings and feedback
 
-✅ Responsive and clean user interface
+ 4.Responsive and clean user interface
 
-✅ Home page with a hero section and welcoming message
+ 5.Home page with a hero section and welcoming message
 
-✅ Image-driven layout with optimized loading
+ 6.Image-driven layout with optimized loading
 
-✅ Semantic and modular CSS for maintainability
+ 7.Semantic and modular CSS for maintainability
 
-📂 Technologies Used
+*** Technologies Used ***
 Frontend: React, JSX, CSS Modules
 
 Backend (assumed): Node.js, SQL-based database
 
 Assets: Images stored in /public/mealPhoto, named by meal ID
 
-🧠 Code Highlights
+ *** Code Highlights ***
 🔹 State Management: Used useState to manage local data (meals, forms, etc.)
 
 🔹 Data Fetching: Used useEffect for API calls and synchronizing frontend with backend
@@ -37,14 +37,14 @@ Assets: Images stored in /public/mealPhoto, named by meal ID
 
 🔹 Visual Feedback: Star-based visual review system
 
-📷 Meal Images
+. Meal Images
 Each meal has an image located in the public/mealPhoto/ folder. Image files are named after the meal’s ID (e.g., 1.jpg, 2.jpg). This enables dynamic loading of the correct image for each meal card.
 
-📣 User Message Example
+. User Message Example
 “Sharing food is about more than eating—it’s about connection. Whether it’s a homemade soup or a full-course dinner, invite others to your table and make memories together.”
 
 
-🛠️ Future Improvements
+*** Future Improvements ***
 User authentication (login/signup)
 
 Admin panel to manage meals and reviews
@@ -55,7 +55,7 @@ Image upload support for new meals
 
 Filter meals by location or cuisine
 
-👨‍💻 Developer
+*** Developer ***
 Created by [Your Name], Junior Frontend Developer.
 This project was developed as a final assignment for a React course, through this project, I learned to think in components, manage state effectively, fetch and sync backend data, and handle user interaction. The use of useState and useEffect gave me confidence in building dynamic, interactive user interfaces.
 
