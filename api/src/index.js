@@ -16,7 +16,7 @@ const apiRouter = express.Router();
 apiRouter.get("/future-meals", async (req, res) => {
   const FUTURE_MEAL_QUERY = `
   select * from meal 
-  where \`when\`> now();
+  where "when"> now();
   `;
   const meals = await knex.raw(FUTURE_MEAL_QUERY);
   res.json({ meals });
@@ -25,7 +25,7 @@ apiRouter.get("/future-meals", async (req, res) => {
 apiRouter.get("/past-meals", async (req, res) => {
   const PAST_MEAL_QUERY = `
   select * from meal 
-  where \`when\`< now();
+  where "when"< now();
   `;
   const meals = await knex.raw(PAST_MEAL_QUERY);
   res.json({ meals });

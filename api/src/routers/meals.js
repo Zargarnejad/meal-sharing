@@ -79,7 +79,7 @@ mealsRouter.get("/", async (req, res) => {
         .status(400)
         .json({ error: "dateAfter must be in YYYY-MM-DD format" });
     } else {
-      query = query.where("when", ">", dateAfter);
+      query = query.where('"when"', ">", dateAfter);
     }
   }
 
@@ -93,7 +93,7 @@ mealsRouter.get("/", async (req, res) => {
         .status(400)
         .json({ error: "dateBefore must be in YYYY-MM-DD format" });
     } else {
-      query = query.where("when", "<", dateBefore);
+      query = query.where('"when"', "<", dateBefore);
     }
   }
 
@@ -102,7 +102,7 @@ mealsRouter.get("/", async (req, res) => {
     const validColumns = ["when", "max_reservations", "price"];
     if (validColumns.includes(sortKey)) {
       if (sortKey === "when") {
-        sortKey = "`when`";
+        sortKey = '"when"';
       }
 
       let sortDir = req.query.sortDir;
@@ -186,12 +186,25 @@ mealsRouter.post("/", async (req, res) => {
 mealsRouter.get("/:id", validateId, async (req, res) => {
   const { id } = req.params;
   try {
-    const selectedMeal = await knex("meal").where({ id });
+    const selectedMeal = await knex("meal as m")
+      .leftOuterJoin(
+        // Subquery to fetch the sum of all reservations for each meal
+        knex("reservation as r")
+          .select("r.meal_id")
+          .sum("number_of_guests as current_reservation_count")
+          .groupBy("r.meal_id")
+          .as("res"),
+        "m.id",
+        "res.meal_id"
+      )
+      .where({ id })
+      .select("m.*", "res.current_reservation_count");
     if (selectedMeal === 0) {
       return res.status(404).json({ error: "Meal not found" });
     }
     res.json(selectedMeal);
   } catch (err) {
+    console.log(err);
     res.status(500).json({ error: " Failed to find a meal" });
   }
 });

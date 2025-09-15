@@ -1,0 +1,145 @@
+import { useState } from "react";
+import "./MealPage.css";
+export default function ReviewForm({ meal, onClose }) {
+  const [reviewText, setReviewText] = useState("");
+  const [reviewDescription, setReviewDescription] = useState("");
+  const [rating, setRating] = useState(5);
+  const [submitState, setSubmitState] = useState("NOT_SUBMITTED");
+  const [validationError, setValidationError] = useState("");
+
+  const resetForm = () => {
+    setReviewText("");
+    setReviewDescription("");
+    setRating(5);
+  };
+
+  const handleCloseButton = (e) => {
+    e.preventDefault();
+    onClose();
+  };
+
+  const submitForm = async (e) => {
+    if (reviewText.trim().length === 0) {
+      setSubmitState("VALIDATION_FAILED");
+      setValidationError("Review title can not be empty");
+      return;
+    }
+
+    const reviewData = {
+      meal_id: meal.id,
+      title: reviewText,
+      description: reviewDescription,
+      stars: Number(rating),
+    };
+
+    try {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/reviews`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(reviewData),
+        }
+      );
+
+      if (res.ok) {
+        setSubmitState("SUBMIT_SUCCEEDED");
+        resetForm();
+      } else {
+        setSubmitState("SUBMIT_FAILED");
+      }
+    } catch (e) {
+      setSubmitState("SUBMIT_FAILED");
+    }
+  };
+
+  // Prepare a message to show in the page in case of error or loading
+  let message = <></>;
+  switch (submitState) {
+    case "SUBMIT_FAILED":
+      message = (
+        <div className="errorMessage">
+          Submitting the review failed. Please try again later ;(
+        </div>
+      );
+      break;
+    case "SUBMIT_SUCCEEDED":
+      message = <div className="successMessage">Your review submitted.</div>;
+      break;
+    case "VALIDATION_FAILED":
+      message = <div className="errorMessage">{validationError}</div>;
+      break;
+  }
+
+  return (
+    <div className="formContainer">
+      <form className="form">
+        <div className="formTitleContainer">
+          <h3>Your Opinion Matters</h3>
+          <button onClick={handleCloseButton}>X</button>
+        </div>
+        {message}
+        <div className="formRowsContainer">
+          <div>Title:</div>
+          <div className="formInputContainer">
+            <input
+              className="formInput"
+              type="text"
+              name="title"
+              id="title"
+              value={reviewText}
+              onChange={(e) => setReviewText(e.target.value)}
+            />
+          </div>
+          <div>Review:</div>
+          <div className="formInputContainer">
+            <textarea
+              className="formInput"
+              name="description"
+              id="description"
+              rows="5"
+              value={reviewDescription}
+              onChange={(e) => setReviewDescription(e.target.value)}
+            />
+          </div>
+          <div>Rate:</div>
+          <div className="formInputContainer">
+            <select
+              className="formInput"
+              name="rate"
+              id="rate"
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+            >
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </select>
+          </div>
+        </div>
+        <div className="formButtonsContainer">
+          <button
+            className="submitBtn"
+            type="button"
+            onClick={(e) => {
+              submitForm(e);
+            }}
+          >
+            Add Review
+          </button>
+          <button
+            className="submitBtn"
+            type="button"
+            onClick={(e) => {
+              resetForm();
+            }}
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
